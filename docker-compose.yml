@@ -3,16 +3,18 @@ version: '3.8'
 services:
   backend:
     build: ./backend
+    image: my-backend
     container_name: backend
-    expose:
-      - "5000"
+    ports:
+      - "5000:5000"
   
 
   frontend:
     build: ./nginx
+    image: my-frontend
     container_name: frontend
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
       - backend
 
