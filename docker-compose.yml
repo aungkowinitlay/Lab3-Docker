@@ -2,19 +2,19 @@ version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     image: my-backend
     container_name: backend-container
     ports:
       - "5000:5000"
-  
 
   frontend:
-    build: ./nginx
+    build:
+      context: ./frontend
     image: my-frontend
     container_name: frontend-container
     ports:
       - "80:80"
     depends_on:
       - backend
-
