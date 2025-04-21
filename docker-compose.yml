@@ -16,5 +16,7 @@ services:
     container_name: frontend-container
     ports:
       - "80:80"
+    cache:
+      image: redis:alpine
     depends_on:
       - backend
